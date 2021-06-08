@@ -117,7 +117,7 @@ ${generateBadge(answers)}
 4. [Contribution-Guidelines](#Contribution-Guidelines)
 5. [Test-instructions](#Test-instructions)
 6. [License](#License)
-7. [Contact-Info](#Contact-Info)
+7. [Questions](#Questions)
 
 ## Description
 ${answers.description}
@@ -136,12 +136,12 @@ ${answers.test}
 ## License
 ${getLicense(answers)}
 
-## Contact-Info
+## Questions
 ${answers.user} - <${answers.email}>
 
 Portfolio - <https://github.com/${answers.github}>`;
 
-    fs.writeFileSync(`${answers.title}.md`, readMe, (err) => {
+    fs.writeFileSync(`README.md`, readMe, (err) => {
         err ? console.error(err) : console.log('README has been generated!');
     });
 };
