@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+//renders license badge icon
 const generateBadge = ({license}) => {
     let badgeId;
     switch (license) {
@@ -23,6 +24,7 @@ const generateBadge = ({license}) => {
     return badgeId;
 };
 
+//grabs license info from user input
 const getLicense = ({license, user}) => {
     let licenseCode;
     switch (license) {
@@ -102,6 +104,7 @@ SOFTWARE.`;
     return licenseCode;
 };
 
+//readme template filled it with user answers
 const renderReadMe = (answers) => {
     const readMe = 
 `# ${answers.title}
@@ -138,7 +141,7 @@ ${answers.user} - <${answers.email}>
 
 Portfolio - <https://github.com/${answers.github}>`;
 
-    fs.writeFileSync('README.md', readMe, (err) => {
+    fs.writeFileSync(`${answers.title}.md`, readMe, (err) => {
         err ? console.error(err) : console.log('README has been generated!');
     });
 };
